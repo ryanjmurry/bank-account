@@ -19,22 +19,29 @@ function resetFields() {
 $(document).ready(function() {
   $("form#new-client").submit(function() {
     event.preventDefault();
-    debugger;
+
+
+    //grabs user name and initial deposit and makes a new object with the inputs
     var inputtedName = $("#new-name").val();
     var initialDeposit = parseInt($("#initial-deposit").val());
     var userAccount = new Account(inputtedName, initialDeposit);
+
     resetFields();
+
     $("form#account-update").submit(function() {
       event.preventDefault();
-      debugger;
+
+
+      //grabs user deposit and withdrawal and adds a new object property "newDeposit" and "newWithdrawal"
       var deposit = parseInt($("#new-deposit").val());
       var withdrawal = parseInt($("#new-withdrawal").val());
       userAccount.newDeposit = deposit;
       userAccount.newWithdrawal = withdrawal;
-      console.log(deposit, withdrawal);
-      console.log(userAccount);
+
+      //runs the Adjust prototype on the userAccount to return a modified balance
       userAccount.Adjust();
-      console.log(userAccount);
+
+      //adjusts user balance on the page
       $("#account-balance").text(userAccount.balance);
 
       resetFields();

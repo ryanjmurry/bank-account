@@ -34,11 +34,11 @@
           <form id="account-update">
             <div class="form-group">
               <label for="new-deposit">New Deposit:</label>
-              <input type="number" min="0" id="new-deposit">
+              <input type="number" min="0" id="new-deposit" value="0">
             </div>
             <div class="form-group">
               <label for="new-withdrawal">New Withdrawal:</label>
-              <input type="number" min="0" id="new-withdrawal">
+              <input type="number" min="0" id="new-withdrawal" value="0">
             </div>
             <button type="submit" class="btn btn-warning">Update Account
         </div>
@@ -47,7 +47,8 @@
       <div class="balance">
         <br>
         <br>
-        <h3>Balance: $<span class="current-balance"></span></h3>
+        <h3>Account Name: <span id="account-name"></span></h3>
+        <h3>Balance: $<span id="account-balance"></span></h3>
       </div>
     </div>
   </body>

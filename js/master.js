@@ -11,8 +11,6 @@ Account.prototype.Adjust = function () {
 function resetFields() {
   $("#new-deposit").val(0);
   $("#new-withdrawal").val(0);
-  $("#new-name").val("");
-  $("#initial-deposit").val(0);
 };
 
 //UI Logic
@@ -25,8 +23,8 @@ $(document).ready(function() {
     var inputtedName = $("#new-name").val();
     var initialDeposit = parseInt($("#initial-deposit").val());
     var userAccount = new Account(inputtedName, initialDeposit);
-
-    resetFields();
+    $("#new-client").hide();
+    $("#transactions").show();
 
     $("form#account-update").submit(function() {
       event.preventDefault();
